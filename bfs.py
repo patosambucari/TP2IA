@@ -37,7 +37,6 @@ def bfs(posicion_inicial, posicion_ideal, incremento, desplazamiento_max, tolera
     # Si no encontramos la posición objetivo
     return -1, None
 
-
 # Parámetros del problema
 posicion_inicial = 0 #Posicion inicial B
 incremento = 1 #Cada movimiento incrementa 1 cm respecto del anterior

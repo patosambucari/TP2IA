@@ -49,6 +49,7 @@ posicion_ideal = random.uniform(-100, 100)
 # Realizar la búsqueda BFS
 depth, posicion_final = bfs(posicion_inicial, posicion_ideal, incremento, desplazamiento_max, tolerancia)
 
+# Mostrar resultados por consola
 if depth >= 0:
     print(f"\nPosición objetivo encontrada: {posicion_final}, Movimientos realizados: {depth}")
 else:

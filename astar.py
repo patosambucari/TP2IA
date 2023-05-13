@@ -66,6 +66,7 @@ posicion_ideal = random.uniform(-100, 100)
 # Realizar la búsqueda por el método A Star
 depth, posicion_final = a_star(posicion_inicial, posicion_ideal, incremento, desplazamiento_max, tolerancia, alfa, beta)
 
+# Mostrar resultados por consola
 if depth >= 0:
     print(f"\nPosición objetivo encontrada: {posicion_final}, Movimientos realizados: {depth}")
 else:

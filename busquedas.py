@@ -87,3 +87,33 @@ if profundidad >= 0:
     print(f"Posición objetivo encontrada: {posicion_final}, movimientos realizados: {profundidad}")
 else:
     print("No se encontró la posición objetivo.")
+
+
+
+
+
+
+
+
+
+
+
+
+        while cola:
+        current_position, current_depth = cola.popleft()
+
+        print(f"Posición actual: {current_position}, Movimientos realizados: {current_depth}")
+
+        # Si alcanzamos la posición objetivo
+        if meta(current_position):
+            return current_depth, current_position
+
+        # Expansión de nodos vecinos
+        neighbors = [current_position - incremento, current_position + incremento]
+        for neighbor in neighbors:
+            if (neighbor not in visitados) and (-desplazamiento_max <= neighbor <= desplazamiento_max):
+                visitados.add(neighbor)
+                cola.append((neighbor, current_depth + 1))  # Incrementar current_depth en cada movimiento
+
+    # Si no encontramos la posición objetivo
+    return -1, None

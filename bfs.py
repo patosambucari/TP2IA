@@ -21,7 +21,7 @@ def bfs(posicion_inicial, posicion_ideal, incremento, desplazamiento_max, tolera
     while cola:
         current_position, current_depth = cola.popleft()
 
-        print(f"Posición actual: {current_position}, Movimientos realizados: {current_depth}")
+        print(f"Posición actual: {current_position}, Nivel expandido: {current_depth}")
 
         # Si alcanzamos la posición objetivo
         if meta(current_position):
@@ -51,6 +51,6 @@ depth, posicion_final = bfs(posicion_inicial, posicion_ideal, incremento, despla
 
 # Mostrar resultados por consola
 if depth >= 0:
-    print(f"\nPosición objetivo encontrada: {posicion_final}, Movimientos realizados: {depth}")
+    print(f"\nPosición objetivo encontrada: {posicion_final}, Movimientos realizados: {depth*2}")
 else:
     print("No se encontró la posición objetivo.")

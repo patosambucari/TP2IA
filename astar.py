@@ -12,7 +12,7 @@ def a_star(posicion_inicial, posicion_ideal, incremento, desplazamiento_max, tol
         r = get_surface_difference(position, posicion_ideal)  # Diferencia de relieve
         return alfa * d + beta * r #Se la heuristica considerando los pesos de alfa y beta, de acuerdo a la importancia que quiera darse a cada uno
 
-    #Se implementa una cola de prioridades, hará que se visiten primero los nodos con menor prioeridad
+    #Se implementa una cola de prioridades, hará que se visiten primero los nodos con mayor prioeridad
     cola_prioridad = [(0, posicion_inicial, 0)]
     visitados = set([posicion_inicial])
 

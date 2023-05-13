@@ -39,13 +39,13 @@ def bfs(posicion_inicial, posicion_ideal, incremento, desplazamiento_max, tolera
 
 
 # Parámetros del problema
-posicion_inicial = 0
-incremento = 0.1
-desplazamiento_max = 10
-tolerancia = 0.05
+posicion_inicial = 0 #Posicion inicial B
+incremento = 1 #Cada movimiento incrementa 1 cm respecto del anterior
+desplazamiento_max = 100 #Se limita la busqueda a 100 cm a la derecha y 100 cm a la izquierda de B
+tolerancia = 0.5 #Se da un margen de tolerancia de 0,5 cm considerando el tamaño del sensor 
 
 # Generar una posición ideal aleatoria
-posicion_ideal = random.uniform(-10, 10)
+posicion_ideal = random.uniform(-100, 100)
 
 # Realizar la búsqueda BFS
 depth, posicion_final = bfs(posicion_inicial, posicion_ideal, incremento, desplazamiento_max, tolerancia)

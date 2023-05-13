@@ -1,16 +1,23 @@
 import random
 from collections import deque
 
+#Se define la función BFS utilizando los parámetros de Inicio, objetivo, limite de desplazamiento y tolerancia.
 def bfs(posicion_inicial, posicion_ideal, incremento, desplazamiento_max, tolerancia):
     def meta(position):
         # Definir la función objetivo según el criterio de montaje exitoso
         return abs(position - posicion_ideal) <= tolerancia
 
+    #Se implementa una cola para almacenar y gestionar los nodos
     cola = deque([(posicion_inicial, 0)])
     visitados = set([posicion_inicial])
 
+    #Se muestra en pantalla la posicion ideal buscada (A)
+    #Esto podría obviarse, ya que el agente desconoce al iniciar la busqueda cual es la posición inicial, y la encuentra a través de sus sensores
+    #Aquí la muestro por pantalla para saber cual será la posición que vamos a buscar, ya que se trata de una representación
     print(f"Posición ideal: {posicion_ideal}")
 
+    #A cada paso se mostrará la posición visitada y la cantidad de movimientos realizados.
+    #Se evaluarán las ubicaciones a un lado y otro de la posición inicial, alternadamente
     while cola:
         current_position, current_depth = cola.popleft()
 
@@ -25,10 +32,11 @@ def bfs(posicion_inicial, posicion_ideal, incremento, desplazamiento_max, tolera
         for neighbor in neighbors:
             if (neighbor not in visitados) and (-desplazamiento_max <= neighbor <= desplazamiento_max):
                 visitados.add(neighbor)
-                cola.append((neighbor, current_depth + 1))
+                cola.append((neighbor, current_depth + 1))  # Incrementar current_depth en cada movimiento
 
     # Si no encontramos la posición objetivo
     return -1, None
+
 
 # Parámetros del problema
 posicion_inicial = 0
